@@ -1,4 +1,4 @@
-package com.example.pokemon;
+package com.example.pokemon.presentation.view;
 
 
 import android.view.LayoutInflater;
@@ -7,6 +7,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.pokemon.R;
+import com.example.pokemon.presentation.model.Pokemon;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.example.pokemon;
+package com.example.pokemon.presentation.model;
 
 public class Pokemon {
 
