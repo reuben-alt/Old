@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -45,12 +46,6 @@ public class MainActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        recyclerView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view){
-
-            }
-        });
 
         // define an adapter
         mAdapter = new ListAdapter(pokemonList, new ListAdapter.OnItemClickListener() {
@@ -68,7 +63,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void navigateToDetails(Pokemon pokemon) {
-        Toast.makeText(getApplicationContext(), "TODO Navigate", Toast.LENGTH_SHORT).show();
-
+       Intent myIntent = new Intent(MainActivity.this, DetailActivity.class);
+       myIntent.putExtra("pokemonKeyName", Singletons.getGson().toJson(pokemon));
+      MainActivity.this.startActivity(myIntent);
     }
 }
